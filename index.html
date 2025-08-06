@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #7b2ff7, #f107a3);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+      animation: slideUp 0.66s ease-out both;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 35px;
+      color: #ff3b3b;
+      text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.4);
+      font-weight: 900;
+      padding: 0 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 100%;
+      max-width: 450px;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+    .game-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 280px;
+      max-width: 100%;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      text-decoration: none;
+      color: inherit;
+      user-select: none;
+      gap: 15px;
+    }
+
+    .game-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-align: left;
+    }
+
+    .game-link img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .water-sort {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffffaa;
+    }
+
+    .flappy-bird {
+      color: #ffeb3b;
+      text-shadow: 0 0 10px #ffeb3baa;
+    }
+
+    .tic-tac-toe {
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88aa;
+    }
+
+    .candy-crush {
+      color: #ff69b4;
+      text-shadow: 0 0 10px #ff69b4aa;
+    }
+
+    .hot-badge {
+      font-size: 16px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff512f, #f09819);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulseHot 1s infinite ease-in-out;
+      text-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @keyframes pulseHot {
+      0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+      }
+      50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 20px rgba(255, 87, 34, 0.9);
+      }
+    }
+
+    .game-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #fff, 0 0 50px #f107a3, 0 0 75px #7b2ff7;
+    }
+
+    .watermark {
+      position: absolute;
+      bottom: 12px;
+      right: 18px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      font-style: italic;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+      }
+
+      .game-link {
+        padding: 16px;
+        font-size: 18px;
+        border-radius: 16px;
+        width: 85%;
+      }
+
+      .game-link img {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+
+      .hot-badge {
+        font-size: 14px;
+      }
+
+      .watermark {
+        font-size: 12px;
+        right: 12px;
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Game Library</h1>
+  <div class="container">
+    <!-- CANDY CRUSH ON TOP WITH HOT BADGE -->
+    <a href="https://shivam6996.github.io/candycrush/" class="game-link candy-crush">
+      <div class="game-info">
+        <img src="candycrush.png" alt="Candy Crush" />
+        Candy Crush
+      </div>
+      <div class="hot-badge">HOT 🔥</div>
+    </a>
+
+    <a href="https://shivam6996.github.io/flappybird/" class="game-link flappy-bird">
+      <div class="game-info">
+        <img src="flappybird.png" alt="Flappy Bird" />
+        Flappy Bird
+      </div>
+    </a>
+
+    <a href="https://shivam6996.github.io/tic-tac-toe/" class="game-link tic-tac-toe">
+      <div class="game-info">
+        <img src="tic-tac-toe.png" alt="Tic Tac Toe" />
+        Tic Tac Toe (ONLY FOR MOBILE DEVICES)
+      </div>
+    </a>
+
+    <!-- WATER SORT MOVED TO BOTTOM -->
+    <a href="https://shivam6996.github.io/watersort/" class="game-link water-sort">
+      <div class="game-info">
+        <img src="watersort.png" alt="Water Sort" />
+        Water Sort
+      </div>
+    </a>
+  </div>
+  <div class="watermark">Made by Shivam Bahardar</div>
+</body>
+</html>
